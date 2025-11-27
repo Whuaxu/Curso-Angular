@@ -21,13 +21,13 @@ export class SideMenuOptions {
       icon: 'fa-solid fa-chart-line',
       label: 'Trending',
       subLabel: 'Gifs Populares',
-      router: 'dashboard/trending',
+      router: '/dashboard/trending',
     },
     {
       icon: 'fa-solid fa-magnifying-glass',
       label: 'Buscador',
       subLabel: 'Buscar Gifs',
-      router: 'dashboard/search',
+      router: '/dashboard/search',
     },
   ];
 }
