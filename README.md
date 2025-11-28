@@ -1,59 +1,57 @@
-# Angular
+# Proyecto Angular (curso de Fernando Herrera)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.0.
+Resumen breve
+- Proyecto creado como parte del curso de Fernando Herrera (YouTube).  
+- Contiene dos carpetas principales:
+  - `bases/` — ejercicios base y ejemplos más simples para aprender conceptos.
+  - `gifs-app/` — proyecto más completo (aplicación de gifs) que integra rutas, servicios y consumo de API.
 
-## Development server
+Estructura destacada (resumen)
+- bases/: proyectos de práctica y componentes básicos.
+- gifs-app/:
+  - src/app/ : código de la app (components, pages, services, etc.)
+  - src/environments/ : variables de entorno (actualmente contiene la API key)
+  - public/, index.html, main.ts, styles.css, etc.
 
-To start a local development server, run:
+Requisitos
+- Node.js (LTS)
+- npm o yarn
+- Angular CLI (opcional para ciertas tareas): npm i -g @angular/cli
 
+Instalación y ejecución (desde la raíz del proyecto o dentro de la carpeta que quieras)
 ```bash
-ng serve
+# desde /home/alia/Documentos/angular/gifs-app
+npm install
+ng serve  
+# abrir http://localhost:4200
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Notas sobre la API key
+- Actualmente la API key de Giphy está en `src/environments/environment.ts`. Deberás crear el archivo y añadir tu RUL de Giphy junto a tu API key
+- Recomendado:
+  1. Mover la clave a variables de entorno en el servidor (backend) y exponer solo un endpoint proxy.
+  2. Si necesitas mantenerla en el build, usar un `.env` en la raíz y no subirlo a git.
+- Añadir a `.gitignore`:
+  ```
+  /src/environments/environment.ts
+  .env
+  ```
+- Si el fichero ya está versionado, quitarlo del índice:
+  ```bash
+  git rm --cached src/environments/environment.ts
+  git add .gitignore
+  git commit -m "Ignore environment with API keys"
+  ```
 
-## Code scaffolding
+Archivos importantes (gifs-app)
+- src/app/gifs/components/ — componentes UI (side-menu, gif-list, etc.)
+- src/app/gifs/pages/ — páginas (trending, search, dashboard)
+- src/app/gifs/services/gifs.ts — servicio que consume la API de Giphy
+- src/environments/environment.ts — actualmente contiene la API key (mover/ignorar)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Consejos rápidos
+- Para centrar texto en componentes usa CSS (text-align: center o flexbox).
+- Verifica rutas en los enlaces del side menu: usa rutas absolutas (`/dashboard/trending`) o relativas correctas según el componente.
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Deployment
+https://cursoangularalia.netlify.app/dashboard
