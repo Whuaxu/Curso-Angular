@@ -59,4 +59,5 @@ Consejos rápidos
 
 ### Deployment
 
+Actualmente el dloyment se encuentra en esta URL mediante el uso de la plataforma netlify
 https://cursoangularalia.netlify.app/dashboard
