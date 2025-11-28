@@ -6,7 +6,9 @@ export const environment = {
     compannySlogan: 'Find the best gifs here!',
 
     //ApiKeys
+    giphyApiKey: 'YOUR_API_KEY_HERE',
 
     //URLS
+    giphyURL:'YOUR_GIPHY_URL_HERE',
 
 };
