@@ -6,14 +6,16 @@ Resumen breve
   - `bases/` — ejercicios base y ejemplos más simples para aprender conceptos.
   - `gifs-app/` — proyecto más completo (aplicación de gifs) que integra rutas, servicios y consumo de API.
 
-Estructura destacada (resumen)
+### Estructura destacada (resumen)
+
 - bases/: proyectos de práctica y componentes básicos.
 - gifs-app/:
   - src/app/ : código de la app (components, pages, services, etc.)
   - src/environments/ : variables de entorno (actualmente contiene la API key)
   - public/, index.html, main.ts, styles.css, etc.
 
-Requisitos
+### Requisitos
+
 - Node.js (LTS)
 - npm o yarn
 - Angular CLI (opcional para ciertas tareas): npm i -g @angular/cli
@@ -26,7 +28,8 @@ ng serve
 # abrir http://localhost:4200
 ```
 
-Notas sobre la API key
+### Notas sobre la API key
+
 - Actualmente la API key de Giphy está en `src/environments/environment.ts`. Deberás crear el archivo y añadir tu RUL de Giphy junto a tu API key
 - Recomendado:
   1. Mover la clave a variables de entorno en el servidor (backend) y exponer solo un endpoint proxy.
@@ -43,7 +46,8 @@ Notas sobre la API key
   git commit -m "Ignore environment with API keys"
   ```
 
-Archivos importantes (gifs-app)
+### Archivos importantes (gifs-app)
+
 - src/app/gifs/components/ — componentes UI (side-menu, gif-list, etc.)
 - src/app/gifs/pages/ — páginas (trending, search, dashboard)
 - src/app/gifs/services/gifs.ts — servicio que consume la API de Giphy
@@ -53,5 +57,6 @@ Consejos rápidos
 - Para centrar texto en componentes usa CSS (text-align: center o flexbox).
 - Verifica rutas en los enlaces del side menu: usa rutas absolutas (`/dashboard/trending`) o relativas correctas según el componente.
 
-Deployment
+### Deployment
+
 https://cursoangularalia.netlify.app/dashboard
