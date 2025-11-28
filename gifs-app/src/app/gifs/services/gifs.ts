@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import  { computed, inject, Injectable, signal } from '@angular/core';
-import { map, tap } from 'rxjs';
+import { map, Observable, tap } from 'rxjs';
 
 import { environment } from '@enviroments/environment';
 
@@ -42,7 +42,7 @@ export class GifsService {
         });
     }
 
-    searchGifs( query: string ) {
+    searchGifs( query: string ) : Observable<Gif[]> {
 
         return this.http.get<GiphyResponse>( `${environment.giphyURL}/gifs/search`, {
             params: {
@@ -61,12 +61,10 @@ export class GifsService {
             })
         );
 
+    }
 
-        // }).subscribe( (resp) => {
-            
-        //     const gifs = GifMapper.toGifArray( resp.data );
-        //     console.log({ search: gifs});
-        // });
+    getHistoryGifs( query: string ): Gif[] {
+        return this.searchHistory()[query] ?? [];
     }
 
 }
